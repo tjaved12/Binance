@@ -1,5 +1,51 @@
+  /* body{
+      display: flex;
+  } */
+  
+  /* ----------header/navbar---------- */
+.jumbotron{
+    margin: 0 auto;
+    height: 200px;
+    width: 100%;
+    background-color: rgb(207, 202, 202);
+}
+  
+.navbar{
+    justify-content: space-around;
+    margin:0 auto;
+}
 
+a{
+    color: rgb(11, 196, 11);
+}
 
-  .navbar{
-      justify-content: space-around;
-  }
+a:hover{
+    color: rgb(7, 155, 7);
+    text-decoration: none;
+}
+
+  /* ----- sidebar ------ */
+aside{
+    float: right;
+    width: 20%;
+    list-style: none;
+}
+
+li{
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+}
+.ulFont{
+    font-weight: bold;
+}
+
+.stock-tile{
+    float: left;
+    width:80%;
+}
+
+.card-footer{
+    height: 45px;
+}
+

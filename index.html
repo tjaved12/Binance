@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binance</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-fluid">
+    <!------ animation property -------->
+<div class="w3-container w3-center w3-animate-opacity">
+    <!------ header and navbar -------->
+    <header class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4">Binance</h1>
-          <p class="lead">A place to find things</p>          
-        </div>
-      </div>
-    
-   
+            <h1 class="display-4">
+                <a href="https://www.binance.com/en">Binance</a>
+            </h1>
+            <p class="lead">A place to find things</p>
+        </div>        
+    </header>
     <nav class="navbar navbar-dark bg-dark">
         <a href="#">commodities</a>
         <a href="#">cryptocurrency</a>
@@ -27,9 +31,49 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </nav>
-    
-
+    <!------ main page content  ------>
     <div class="pageContainer">
+        
+        <div class="card text-center stock-tile">
+            <div class="card-header">
+              <h2>Commodities</h2>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Stock "xyz"</h5>
+              <p class="card-text">"brief description of company xyz"</p>
+              <a href="#" class="btn btn-primary">go to "xyz"</a>
+            </div>
+            <div class="card-footer text-muted">
+              
+            </div>
+          </div>
+        <aside class="most-popular">
+            <ul class="stockList">
+                <p class="ulFont">Recent Searches</p>
+                <li class="name">
+                    asfasdf
+                </li>
+                <li class="name">
+                    asdfasdf
+                </li>
+                <li class="name">
+                    asdfasdf
+                </li>
+                <li class="name">
+                    asdfasdfa
+                </li>
+                <li class="name">
+                    asdfasdf
+                </li>
+                <li class="name">
+                    asdfasdfa
+                </li>
+            </ul>
+        </aside>
+    </div>
+
+</div>
+
         <div id="symbolInfo"></div>
 
     </div>
