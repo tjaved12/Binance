@@ -1,5 +1,36 @@
+  /* body{
+      display: flex;
+  } */
+  
+  /* ----------header/navbar---------- */
+.jumbotron{
+    margin: 0 auto;
+    height: 200px;
+    width: 100%;
+    background-color: rgb(207, 202, 202);
+}
+  
+.navbar{
+    justify-content: space-around;
+    margin:0 auto;
+}
 
+a{
+    color: rgb(11, 196, 11);
+}
 
-  .navbar{
-      justify-content: space-around;
-  }
+  /* ----- sidebar ------ */
+aside{
+    float: right;
+    width: 20%;
+    list-style-type: none;
+}
+
+.stock-tile{
+    float: left;
+    width:80%;
+}
+
+.card-footer{
+    height: 45px;
+}
