@@ -2,22 +2,27 @@
 
  //Declaring variables
 
- $(".stock-tile").hide()
+ $("#stock-tile1").hide()
+ $("#stock-tile2").hide()
  displayRecentSearchHistory() 
  
  $("#searchBtn").on("click",function(event){
     event.preventDefault();
       console.log("open")
-    $(".card-title").empty()
-    $(".card-text").empty()
-    $(".btn-primary").empty()
-    $(".stock-tile").show()
-
+    $(".card-title1").empty()
+    $(".card-text1").empty()
+    $("#hBtn1").empty()
+      $(".card-title2").empty()
+    $(".card-text2").empty()
+    $("#hBtn2").empty()
+    $("#stock-tile1").show()
+    $("#stock-tile2").hide()
+    
     var symbol=  $("#inputSymbol").val()
     getData(symbol)
  })
  function getData(symbol){
-      var queryURL = "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords="+symbol+"&apikey=03SVGJ9SZRBGVOUS"
+      var queryURL = "https://www.alphavantage.co/query?function=OVERVIEW&symbol="+symbol+"&apikey=03SVGJ9SZRBGVOUS"
       $.ajax({
         url: queryURL,
         method: "GET"
@@ -27,11 +32,21 @@
           // Log the queryURL
           console.log(queryURL);
     console.log(response)
-    $(".card-title").append(" Symbol: " + (response.bestMatches[0]["1. symbol"]))
-    $(".card-text").append(" Company Name: " + (response.bestMatches[0]["2. name"]))
-    $(".btn-primary").append(response.bestMatches[0]["1. symbol"])
+    $(".card-title1").append(" Symbol: " + (response.Symbol))
+    $(".card-text1").append("<li> Company Name: " + (response.Name)+"</li>")
+    $(".card-text1").append(" <li>Exchange: " + (response.Exchange)+"</li>")
+    $(".card-text1").append("<li> Sector: " + (response.Sector)+"</li>")
+    $(".card-text1").append("<li> Industry: " + (response.Industry)+"</li>")
+    $(".card-text1").append("<li> DividendPerShare: " + (response.DividendPerShare)+"</li>")
+    $(".card-text1").append("<li> AnalystTargetPrice: " + (response.AnalystTargetPrice)+"</li>")
+    $("#hBtn1").append(response.Symbol)
     
-       
+    $(".card-title2").append(" Symbol Details: " + (response.Symbol))
+    $(".card-text2").append("<li> Company Description: " + (response.Description)+"</li>")
+    $(".card-text2").append(" <li>Currency: " + (response.Currency)+"</li>")
+    $(".card-text2").append("<li> Country: " + (response.Country)+"</li>")
+ 
+    
 
 })
 
@@ -40,17 +55,39 @@ $('#list').on('click', 'li', function(){
   
     console.log('hitt', $(this).text());
     var symbol = $(this).text();
-    $(".card-title").empty()
-    $(".card-text").empty()
-    $(".btn-primary").empty()
-    $(".stock-tile").show()
-  
+    $(".card-title1").empty()
+    $(".card-text1").empty()
+    $("#hBtn1").empty()
+    $(".card-title2").empty()
+    $(".card-text2").empty()
+    $("#hBtn2").empty()
+    $("#stock-tile1").show()
+    $("#stock-tile2").hide()
+    $("#list").empty()
    
 
     console.log(symbol)
     getData(symbol)
     
   
+  })
+
+  $("#hBtn1").on('click',function(){
+    console.log('gotit', $(this).text());
+    var symbol = $(this).text();
+    $(".card-title1").empty()
+    $(".card-text1").empty()
+    $(".card-title2").empty()
+    $(".card-text2").empty()
+    $("#hBtn1").empty()
+    $("#stock-tile1").hide()
+    $("#stock-tile2").show()
+    $("#list").empty()
+   
+
+    console.log(symbol)
+    getData(symbol)
+    
   })
   function displayRecentSearchHistory() {
     $("#searchBtn").on("click",function(event){
