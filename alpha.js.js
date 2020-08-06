@@ -20,6 +20,8 @@
     
     var symbol=  $("#inputSymbol").val()
     getData(symbol)
+    getIcon(symbol)
+
  })
  function getData(symbol){
       var queryURL = "https://www.alphavantage.co/query?function=OVERVIEW&symbol="+symbol+"&apikey=03SVGJ9SZRBGVOUS"
@@ -45,11 +47,23 @@
     $(".card-text2").append("<li> Company Description: " + (response.Description)+"</li>")
     $(".card-text2").append(" <li>Currency: " + (response.Currency)+"</li>")
     $(".card-text2").append("<li> Country: " + (response.Country)+"</li>")
- 
-    
 
 })
+}
 
+function getIcon(symbol){
+    var iconURL = "https://api.serpwow.com/live/search?api_key=5B001D6BC2A344FFB89CC51E65451763&q="+symbol+"+official+logo&search_type=images&images_size=icon"
+     $.ajax({
+            url: iconURL,
+            method: "GET"
+          })
+            // We store all of the retrieved data inside of an object called "response"
+            .then(function (response2) {
+            console.log(response2)
+            $("img").attr("src", response2.image_results[0].image)
+        }
+
+)
 }
 $('#list').on('click', 'li', function(){
   
@@ -75,14 +89,13 @@ $('#list').on('click', 'li', function(){
   $("#hBtn1").on('click',function(){
     console.log('gotit', $(this).text());
     var symbol = $(this).text();
+
     $(".card-title1").empty()
     $(".card-text1").empty()
     $(".card-title2").empty()
     $(".card-text2").empty()
-    $("#hBtn1").empty()
     $("#stock-tile1").hide()
     $("#stock-tile2").show()
-    $("#list").empty()
    
 
     console.log(symbol)
@@ -96,6 +109,7 @@ $('#list').on('click', 'li', function(){
     console.log(symbol)
     //saving the symbol na
     //Using parse to change the string into parse
+    
     var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
     // console.log('searchHistory', searchHistory)
     //Declaring variables
