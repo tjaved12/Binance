@@ -49,3 +49,21 @@ li{
     height: 45px;
 }
 
+/*topnews*/
+.card {
+    margin-left: 20px;
+    margin-right: 35px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  
+  .business {
+    background: grey;
+    color: white;
+    margin-top: 75px;
+    padding: 5px 25px;
+    width: 20%;
+    margin-bottom: 25px;
+    margin-left: 20px;
+    margin-right: 35px;
+  }
