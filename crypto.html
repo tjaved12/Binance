@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <link rel="stylesheet" href="./css/style2.css">
+  
+  </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark">
-      <a href="commodities.html">commodities</a>
-      <a href="crypto.html">cryptocurrency</a>
-      <a href="index.html">stocks</a>
-      <form class="form-inline">
-          <input id ="inputSymbol"class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button id="searchBtn"class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-  </nav>
-      <div class="container">
-          <div class="row">
+     <!------ animation property -------->
+<div class="w3-container w3-center w3-animate-opacity">
+    <!------ header and navbar -------->
+    <header class="jumbotron jumbotron-fluid">
+        <div class="container">
             <h1 class="display-4">
-              <a href="https://www.binance.com/en">Binance</a>
-          </h1>
-          </div>
+                <a href="https://www.marketwatch.com/">MarketWatch</a>
+            </h1>
+            <p class="lead">A place to find things</p>
+        </div>        
+    </header>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="commodities.html">commodities</a>
+        <a href="crypto.html">cryptocurrency</a>
+        <a href="index.html">stocks</a>
+        <form class="form-inline">
+            <input id ="inputSymbol"class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button id="searchBtn"class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+    <!------ main page content  ------>
           <div class="row">
               <input id="symbol" type="text" class="col-sm-2" placeholder="Symbol" value="BTCUSDT">
           </div>
