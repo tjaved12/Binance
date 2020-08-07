@@ -12,6 +12,9 @@ $("#searchBtn").on("click",function(event){
    $(".card-title1").empty()
    $(".card-text1").empty()
    $("#hBtn1").empty()
+   $(".card-title2").empty()
+   $(".card-text2").empty()
+   $("#hBtn1").empty()
      
    $("#stock-tile1").show()
    $("#stock-tile2").hide()
@@ -34,14 +37,19 @@ function getData(symbol){
          // Log the queryURL
          console.log(queryURL);
    console.log(response)
+   $(".card-text2").append(" <p> Description: " + (response.dataset.description)+"</p>")
    $(".card-title1").append(" Commodity: " + (response.dataset.name))
    $(".card-text1").append("<li> Database code: " + (response.dataset.database_code)+"</li>")
-   $(".card-text1").append("<li>Dataset code : " + (response.dataset.dataset_code)+"</li>")
-   $(".card-text1").append("<li> Last available Data " + (response.dataset.newest_available_date)+"</li>")
-      $(".card-text1").append(" <p>Description: " + (response.dataset.description)+"</p>")
-     
-   
+   $(".card-text1").append("<li>Dataset code: " + (response.dataset.dataset_code)+"</li>")
+   $(".card-text1").append("<li>Date: " + (response.dataset.data[0][0])+"</li>")
+   $(".card-text1").append("<li>US Price AM: " + (response.dataset.data[0][1])+"</li>")
+   $(".card-text1").append("<li>US Price PM: " + (response.dataset.data[0][2])+"</li>")
+      
    $("#hBtn1").append(response.dataset.name)
+    $(".card-title2").append(" Commodity: " + (response.dataset.name))
+  
+     
+
  
 })
 }
@@ -67,6 +75,9 @@ $('#list').on('click', 'li', function(){
    $(".card-title1").empty()
    $(".card-text1").empty()
    $("#hBtn1").empty()
+   $(".card-title2").empty()
+   $(".card-text2").empty()
+ 
       $("#list").empty()
   
 
@@ -103,3 +114,20 @@ $("#list").empty()
    }
  }
 )}
+
+$("#hBtn1").on('click',function(){
+    console.log('gotit', $(this).text());
+    var symbol = $(this).text();
+
+    $(".card-title1").empty()
+    $(".card-text1").empty()
+    $(".card-title2").empty()
+    $(".card-text2").empty()
+    $("#stock-tile1").hide()
+    $("#stock-tile2").show()
+   
+
+    console.log(symbol)
+    getData(symbol)
+    
+  })
