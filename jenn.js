@@ -3,9 +3,9 @@ $('#news').card
 
 function displayNews() {
 
-    var queryURL = 'https://newsapi.org/v2/top-headlines?' +
-        'country=us&category=business&pageSize=5&' + 'apiKey=3a74e106dcba4291b653474e5c385cf0';
-        console.log(displayNews)
+    var queryURL =' https://newsapi.org/v2/top-headlines?country=us'+ '&apiKey=3a74e106dcba4291b653474e5c385cf0'
+
+        
     $.ajax({
 
         url: queryURL,

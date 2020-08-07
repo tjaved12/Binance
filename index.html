@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binance</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="./css/style.css">
 
@@ -17,14 +18,14 @@
     <header class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">
-                <a href="https://www.binance.com/en">Binance</a>
+                <a href="https://www.marketwatch.com/">MarketWatch</a>
             </h1>
             <p class="lead">A place to find things</p>
         </div>        
     </header>
     <nav class="navbar navbar-dark bg-dark">
         <a href="#">commodities</a>
-        <a href="#">cryptocurrency</a>
+        <a href="crypto.html">cryptocurrency</a>
         <a href="#">stocks</a>
         <form class="form-inline">
             <input id ="inputSymbol"class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -33,7 +34,11 @@
     </nav>
     <!------ main page content  ------>
     <div class="pageContainer">
-        
+      
+      <div id="news">
+        <h6 class="business"> Business News</h6>
+        </div>
+     
         <div id ="stock-tile1"class="card text-center stock-tile">
             <div class="card-header1">
               <h2>Stocks</h2>
@@ -74,19 +79,22 @@
            
         </aside>
     </div>
-    <h5 class="business">Top Business News</h5>
 
-    <div id="news"></div>
+  
 </div>
 
         <div id="symbolInfo"></div>
 
     </div>
+    <script type="text/javascript"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript"></script>
-    <script src= "alpha.js"></script>
-  
     
+
+    <script src= "alpha.js"></script>
+
+    <script src="jenn.js"></script>
+
+
 </body>
 </html>
