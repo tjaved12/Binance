@@ -35,7 +35,7 @@
           console.log(queryURL);
     console.log(response)
     $(".card-title1").append(" Symbol: " + (response.Symbol))
-    $(".card-text1").append("<li> Company Name: " + (response.Name)+"</li>")
+    $("#companyName").append("<li>" + (response.Name) + "</li>")
     $(".card-text1").append(" <li>Exchange: " + (response.Exchange)+"</li>")
     $(".card-text1").append("<li> Sector: " + (response.Sector)+"</li>")
     $(".card-text1").append("<li> Industry: " + (response.Industry)+"</li>")
