@@ -1,7 +1,3 @@
-  /* body{
-      display: flex;
-  } */
-  
   /* ----------header/navbar---------- */
 .jumbotron{
     margin: 0 auto;
@@ -25,50 +21,29 @@ a:hover{
     text-decoration: none;
 }
 
-  /* ----- sidebar ------ */
-aside{
-    float: right;
-    width: 20%;
-    list-style: none;
+  /* ----- Recent Search ------ */
+.searchCol{
+    text-align: center;
+    justify-content: center;
 }
 
 li{
     list-style-type: none;
     margin: 0 auto;
     padding: 0;
-}
-.ulFont{
-    font-weight: bold;
-}
+} 
 
-.stock-tile{
-    float: left;
-    width:80%;
-}
+
 
 .card-footer{
     height: 45px;
 }
 
-/*topnews*/
-.card {
-    margin-left: 20px;
-    margin-right: 35px;
-    margin-bottom: 30px;
-    margin-top: 30px;
-  }
-  
-  .business {
-    background: grey;
-    color: white;
-    margin-top: 75px;
-    padding: 5px 25px;
-    width: 20%;
-    margin-bottom: 25px;
-    margin-left: 20px;
-    margin-right: 35px;
-  }
+.w3-container{
+    padding:0;
+}
 
-  .card-body1{
-      margin:10px;
-  }
+.newsContainer{
+    padding:0 auto;
+    /* margin:2px auto; */
+}

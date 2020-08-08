@@ -10,34 +10,20 @@ function displayNews(){
         console.log (response)
       console.log (queryURL)
       
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < 5; i++) {
   console.log(response.data[i])
 
 
 
 
-  var card = `<div class="col s12 m7">\
-  <div class="card horizontal">\
-    <div class="image_url">\
-      <img src="${response.data[i].image_url}">\
-    </div>\
-    <div class="news_url">\
-    <news src="${response.data[i].news_url}">\
-  </div>\
-  <div class="source_name">\
-    <a src="${response.data[i].source_name}">\
-  </div>\
-  
-    <div class="card-stacked">\
-      <div class="card-content">\
-        <p>${response.data[i].text}</p>\
-      </div>\
-      <div class="card-action">\
-        <a href="${response.data[i].url}">${response.data[i].title}</a>\
-      </div>\
-    </div>\
-  </div>\
-</div>`
+  var card = `<div id="newsCard" class="card" style="width: 18rem,">\
+                <img src="${response.data[i].image_url}" class="card-img-top">\
+                <div class="card-body">\
+                  <a href="${response.data[i].url}">${response.data[i].title}</a>\
+                  <p class="card-text>${response.data[i].text}</p>\
+                  <news src="${response.data[i].news_url}">\
+                </div>\
+              </div>`
 
   $("#news").append(card);
 }
