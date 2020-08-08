@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binance</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="./css/style.css">
 
@@ -13,6 +12,7 @@
 
 <body>
     <!------ animation property -------->
+
 <div class="w3-container w3-center w3-animate-opacity">
     <!------ header and navbar -------->
     <header class="jumbotron jumbotron-fluid">
@@ -49,62 +49,97 @@
 
 
         </div>
+    <div class="w3-container w3-center w3-animate-opacity">
+        <!------ header and navbar -------->
+        <header class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">
+                    <a href="https://www.marketwatch.com/">MarketWatch</a>
+                </h1>
+                <p class="lead">A place to find things</p>
+            </div>        
+        </header>
+        <nav class="navbar navbar-dark bg-dark">
+            <a href="commodities.html">Commodities</a>
+            <a href="crypto.html">Cryptocurrency</a>
+            <a href="index.html">Stocks</a>
+            <form class="form-inline">
+                <input id ="inputSymbol"class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button id="searchBtn"class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+        <!------ main page content  ------>
+
      
-        <div id ="stock-tile1"class="card text-center stock-tile">
-            <div class="card-header1">
-              <h2>Stocks</h2>
-                          </div>
-            <div class="card-body1">
-              <h5 class="card-title1"></h5>
-              <img src=""class="assetLogo"
-                width="90" height="90">
-              <p class="card-text1"></p>
-              <a href="#" id ="hBtn1" class="btn btn-primary"></a>
+        <div class="pageContainer">
+            
+            <div id ="stock-tile1"class="card text-center stock-tile">
+                <div class="card-header1">
+                    <br>
+                    
+                  <h2>Stocks</h2>
+                              </div>
+                <div class="card-body1">
+                  <h5 class="card-title1"></h5>
+                  <img src=""class="assetLogo"
+                    width="90" height="90">
+                  <p class="card-text1"></p>
+                  <a href="#" id ="hBtn1" class="btn btn-primary"></a>
+                </div>
+                <div class="card-footer text-muted">
+                  
+                </div>
+              </div>
+            
+                <div class="card-footer text-muted">
+                  
+                </div>
             </div>
-            <div class="card-footer text-muted">
-              
+            <div id ="stock-tile2"class="card text-center stock-tile">
+              <div class="card-header2">
+                <h2>Stocks</h2>
+              </div>
+              <div class="card-body2">
+                <h5 class="card-title2"></h5>
+                <p class="card-text2"></p>
+                <a href="#" id ="hBtn2" class="btn btn-primary">'Go Back'</a>
+              </div>
+              <div class="card-footer text-muted">
+                
+              </div>
             </div>
-          </div>
-          <div id ="stock-tile2"class="card text-center stock-tile">
-            <div class="card-header2">
-              <h2>Stocks</h2>
-            </div>
-            <div class="card-body2">
-              <h5 class="card-title2"></h5>
-              <p class="card-text2"></p>
-              <a href="#" id ="hBtn2" class="btn btn-primary">'Go Back'</a>
-            </div>
-            <div class="card-footer text-muted">
-              
-            </div>
-          </div>
-        <aside class="most-popular">
-            <h5>Recent Searches</h5>
-
-            <ul id ="list"class="stockList">
-                <hr class="my-4">
-             
-                    </ul>
+          <aside class="most-popular">
+              <h5>Recent Searches</h5>
+    
+              <ul id ="list"class="stockList">
                   <hr class="my-4">
-                       
-           
-        </aside>
+               
+                      </ul>
+                    <hr class="my-4">
+                         
+             
+          </aside>
+      </div>
+      <div id="news">
+      <h5 class="business">Top Business News</h5>
+
+      </div>
     </div>
-
-  
-</div>
-
         <div id="symbolInfo"></div>
 
     </div>
+    <script type="text/javascript"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript"></script>
+    
 
     <script src= "alpha.js"></script>
 
+
     <!-- <script src= "tradier.js"></script> -->
     <script src="news.js"s></script>
+
+
 
 </body>
 </html>

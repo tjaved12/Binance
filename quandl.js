@@ -2,7 +2,9 @@
 
 $("#stock-tile1").hide()
 $("#stock-tile2").hide()
+
 displayRecentSearchHistory() 
+
 
 $("#searchBtn").on("click",function(event){
    event.preventDefault();
@@ -10,9 +12,10 @@ $("#searchBtn").on("click",function(event){
    $(".card-title1").empty()
    $(".card-text1").empty()
    $("#hBtn1").empty()
-     $(".card-title2").empty()
+   $(".card-title2").empty()
    $(".card-text2").empty()
-   $("#hBtn2").empty()
+   $("#hBtn1").empty()
+     
    $("#stock-tile1").show()
    $("#stock-tile2").hide()
    
@@ -22,7 +25,9 @@ $("#searchBtn").on("click",function(event){
 
 })
 function getData(symbol){
-     var queryURL = "https://www.alphavantage.co/query?function=OVERVIEW&symbol="+symbol+"&apikey=03SVGJ9SZRBGVOUS"
+     var queryURL = "https://www.quandl.com/api/v3/datasets/"+symbol+".json?api_key=51-RFYikq27uLnkM6Hdb"
+
+   https://www.quandl.com/api/v3/datasets/JOHNMATT/PALL.json?api_key=51-RFYikq27uLnkM6Hdb
      $.ajax({
        url: queryURL,
        method: "GET"
@@ -32,37 +37,37 @@ function getData(symbol){
          // Log the queryURL
          console.log(queryURL);
    console.log(response)
-   $(".card-title1").append(" Symbol: " + (response.Symbol))
-   $(".card-text1").append("<li> Company Name: " + (response.Name)+"</li>")
-   $(".card-text1").append(" <li>Exchange: " + (response.Exchange)+"</li>")
-   $(".card-text1").append("<li> Sector: " + (response.Sector)+"</li>")
-   $(".card-text1").append("<li> Industry: " + (response.Industry)+"</li>")
-   $(".card-text1").append("<li> DividendPerShare: " + (response.DividendPerShare)+"</li>")
-   $(".card-text1").append("<li> AnalystTargetPrice: " + (response.AnalystTargetPrice)+"</li>")
-   $("#hBtn1").append(response.Symbol)
-   
-   $(".card-title2").append(" Symbol Details: " + (response.Symbol))
-   $(".card-text2").append("<li> Company Description: " + (response.Description)+"</li>")
-   $(".card-text2").append(" <li>Currency: " + (response.Currency)+"</li>")
-   $(".card-text2").append("<li> Country: " + (response.Country)+"</li>")
+   $(".card-text2").append(" <p> Description: " + (response.dataset.description)+"</p>")
+   $(".card-title1").append(" Commodity: " + (response.dataset.name))
+   $(".card-text1").append("<li> Database code: " + (response.dataset.database_code)+"</li>")
+   $(".card-text1").append("<li>Dataset code: " + (response.dataset.dataset_code)+"</li>")
+   $(".card-text1").append("<li>Date: " + (response.dataset.data[0][0])+"</li>")
+   $(".card-text1").append("<li>US Price AM: " + (response.dataset.data[0][1])+"</li>")
+   $(".card-text1").append("<li>US Price PM: " + (response.dataset.data[0][2])+"</li>")
+      
+   $("#hBtn1").append(response.dataset.name)
+    $(".card-title2").append(" Commodity: " + (response.dataset.name))
+  
+     
 
+ 
 })
 }
 
-function getIcon(symbol){
-   var iconURL = "https://api.serpwow.com/live/search?api_key=5B001D6BC2A344FFB89CC51E65451763&q="+symbol+"+official+logo&search_type=images&images_size=icon"
-    $.ajax({
-           url: iconURL,
-           method: "GET"
-         })
+//function getIcon(symbol){
+   //var iconURL = "https://api.serpwow.com/live/search?api_key=5B001D6BC2A344FFB89CC51E65451763&q="+symbol+"+official+logo&search_type=images&images_size=icon"
+   // $.ajax({
+      //     url: iconURL,
+      //     method: "GET"
+       //  })
            // We store all of the retrieved data inside of an object called "response"
-           .then(function (response2) {
-           console.log(response2)
-           $("img").attr("src", response2.image_results[0].image)
-       }
+       //    .then(function (response2) {
+       //    console.log(response2)
+     //      $("img").attr("src", response2.image_results[0].image)
+     //  }
 
-)
-}
+//)
+//}
 $('#list').on('click', 'li', function(){
  
    console.log('hitt', $(this).text());
@@ -72,10 +77,8 @@ $('#list').on('click', 'li', function(){
    $("#hBtn1").empty()
    $(".card-title2").empty()
    $(".card-text2").empty()
-   $("#hBtn2").empty()
-   $("#stock-tile1").show()
-   $("#stock-tile2").hide()
-   $("#list").empty()
+ 
+      $("#list").empty()
   
 
    console.log(symbol)
@@ -84,22 +87,7 @@ $('#list').on('click', 'li', function(){
  
  })
 
- $("#hBtn1").on('click',function(){
-   console.log('gotit', $(this).text());
-   var symbol = $(this).text();
 
-   $(".card-title1").empty()
-   $(".card-text1").empty()
-   $(".card-title2").empty()
-   $(".card-text2").empty()
-   $("#stock-tile1").hide()
-   $("#stock-tile2").show()
-  
-
-   console.log(symbol)
-   getData(symbol)
-   
- })
  function displayRecentSearchHistory() {
    $("#searchBtn").on("click",function(event){
        event.preventDefault();
@@ -126,3 +114,20 @@ $("#list").empty()
    }
  }
 )}
+
+$("#hBtn1").on('click',function(){
+    console.log('gotit', $(this).text());
+    var symbol = $(this).text();
+
+    $(".card-title1").empty()
+    $(".card-text1").empty()
+    $(".card-title2").empty()
+    $(".card-text2").empty()
+    $("#stock-tile1").hide()
+    $("#stock-tile2").show()
+   
+
+    console.log(symbol)
+    getData(symbol)
+    
+  })
