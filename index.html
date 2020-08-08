@@ -31,73 +31,66 @@
         <button id="searchBtn"class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </nav>
-        <!------ main page content  ------>
+    <!------ main page content  ------>
   <div class="pageContainer">
-    
-      <div class="row">
-        <div class="col-12">
-          <div id ="stock-tile1" class="card text-center stock-tile">
-            <div class="card-header">
-              <br>
-              <a href="https://blog.quandl.com/api-for-commodity-data">Find the commodities here</a>
-              <h2 id="companyName"></h2>
-            </div>
-            <div class="card-body1">
-              <h5 class="card-title1"></h5>
-              <img src=""class="assetLogo"
-                width="90" height="90">
-              <p class="card-text1"></p>
-              <a href="#" id ="hBtn1" class="btn btn-primary"></a>
-            </div>
-            <div class="card-footer text-muted">                  
-            </div>
-          </div>
-          <div id ="stock-tile2"class="card text-center stock-tile">
-            <div class="card-header2">
-              <h2>Stocks</h2>
-            </div>
-            <div class="card-body2">
-              <h5 class="card-title2"></h5>
-              <p class="card-text2"></p>
-              <a href="#" id ="hBtn2" class="btn btn-primary">'Go Back'</a>
-            </div>
-            <div class="card-footer text-muted">                
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-3">
-            <aside class="most-popular">
-              <h5>Recent Searches</h5>
-              <ul id ="list"class="stockList">
-                <hr class="my-4">
-               
-              </ul>
-                <hr class="my-4">
-            </aside>
-        </div>
-        </div>
-        </div>
-    </div>
-      <div id="news">
-      <h5 class="business">Top Business News</h5>
 
+      <!------ News ------>
+    <div class="row">
+      <div class="col-3 newsContainer">
+        <section id="news">
+          <h5 class="business">Top Business News</h5>
+        </section>
+      </div>
+        <div id="symbolInfo">
+        </div>
+    
+      <!------ Stock Card ------>
+      <div class="col-7 sticky-top">
+        <div id ="stock-tile1" class="card text-center stock-tile">
+          <div class="card-header">
+            <h2 id="companyName"></h2>
+          </div>
+          <div class="card-body1">
+            <h5 class="card-title1"></h5>
+            <img src=""class="assetLogo"
+              width="90" height="90">
+            <p class="card-text1"></p>
+            <a href="#" id ="hBtn1" class="btn btn-primary"></a>
+          </div>
+          <div class="card-footer text-muted">                  
+          </div>
+        </div>
+        <div id ="stock-tile2"class="card text-center stock-tile">
+          <div class="card-header2">
+            <h2>Stocks</h2>
+          </div>
+          <div class="card-body2">
+            <h5 class="card-title2"></h5>
+            <p class="card-text2"></p>
+            <a href="#" id ="hBtn2" class="btn btn-primary">'Go Back'</a>
+          </div>
+          <div class="card-footer text-muted">                
+          </div>
+        </div>
+      </div>
+      <!------ Recent Searches ------>
+      <div class="col-2 searchCol">
+        <aside class="most-popular">
+          <h5>Recent Searches</h5>
+          <ul id ="list"class="stockList">
+            <hr class="my-4">
+          </ul>
+              <hr class="my-4">
+        </aside>
       </div>
     </div>
-        <div id="symbolInfo"></div>
+  </div>  
 
-    </div>
+
     <script type="text/javascript"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-
     <script src= "alpha.js"></script>
-
-
     <!-- <script src= "tradier.js"></script> -->
     <script src="news.js"s></script>
-
-
-
 </body>
 </html>

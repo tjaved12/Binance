@@ -119,7 +119,7 @@ $("#list").empty()
     searchHistory.push(symbol);
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
     var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
-    for (var i = 0; i < searchHistory.length; i++) {
+    for (var i = 0; i < 15; i++) {
       console.log('searchHistory', searchHistory)
       var liEl = document.createElement('li')
       // console.log('searchHistory', (searchHistory[i]));
