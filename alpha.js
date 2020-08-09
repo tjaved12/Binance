@@ -1,6 +1,4 @@
-
-
- //Declaring variables
+//Declaring variables
  $("#stock-tile").show()
  $("#stock-tile0").show()
  $("#stock-tile1").hide()
@@ -87,7 +85,6 @@ $('#list').on('click', 'li', function(){
     $("#stock-tile").hide()
     $("#stock-tile1").show()
     $("#stock-tile2").hide()
-    $("#list").empty()
    
 
     console.log(symbol)
