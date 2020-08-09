@@ -1,7 +1,8 @@
 
 
  //Declaring variables
-
+ $("#stock-tile").show()
+ $("#stock-tile0").show()
  $("#stock-tile1").hide()
  $("#stock-tile2").hide()
  displayRecentSearchHistory() 
@@ -9,6 +10,8 @@
  $("#searchBtn").on("click",function(event){
     event.preventDefault();
       console.log("open")
+      $("#stock-tile").hide()
+      $("#stock-tile0").hide()
     $(".card-title1").empty()
     $(".card-text1").empty()
     $("#hBtn1").empty()
@@ -75,6 +78,8 @@ $('#list').on('click', 'li', function(){
     $(".card-title2").empty()
     $(".card-text2").empty()
     $("#hBtn2").empty()
+    $("#stock-tile0").hide()
+    $("#stock-tile").hide()
     $("#stock-tile1").show()
     $("#stock-tile2").hide()
     $("#list").empty()
