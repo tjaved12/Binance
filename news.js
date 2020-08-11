@@ -19,7 +19,7 @@ for (let i = 0; i < 5; i++) {
   var card = `<div id="newsCard" class="card" style="width: 18rem,">\
                 <img src="${response.data[i].image_url}" class="card-img-top">\
                 <div class="card-body">\
-                  <a href="${response.data[i].url}">${response.data[i].title}</a>\
+                  <a href="${response.data[i].news_url}">${response.data[i].title}</a>\
                   <p class="card-text>${response.data[i].text}</p>\
                   <news src="${response.data[i].news_url}">\
                 </div>\
