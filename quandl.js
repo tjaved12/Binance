@@ -1,14 +1,20 @@
 //Declaring variables
 
+$("#stock-tile").show()
+$("#stock-tile0").show()
 $("#stock-tile1").hide()
 $("#stock-tile2").hide()
-
 displayRecentSearchHistory() 
+
+
 
 
 $("#searchBtn").on("click",function(event){
    event.preventDefault();
      console.log("open")
+     $("#stock-tile").hide()
+      $("#stock-tile0").hide()
+      $("#companyName").empty()
    $(".card-title1").empty()
    $(".card-text1").empty()
    $("#hBtn1").empty()
@@ -37,8 +43,9 @@ function getData(symbol){
          // Log the queryURL
          console.log(queryURL);
    console.log(response)
+   
    $(".card-text2").append(" <p> Description: " + (response.dataset.description)+"</p>")
-   $(".card-title1").append(" Commodity: " + (response.dataset.name))
+   $("#companyName").append("<li> Commodity: " + (response.dataset.name)+"</li>")
    $(".card-text1").append("<li> Database code: " + (response.dataset.database_code)+"</li>")
    $(".card-text1").append("<li>Dataset code: " + (response.dataset.dataset_code)+"</li>")
    $(".card-text1").append("<li>Date: " + (response.dataset.data[0][0])+"</li>")
@@ -46,7 +53,7 @@ function getData(symbol){
    $(".card-text1").append("<li>US Price PM: " + (response.dataset.data[0][2])+"</li>")
       
    $("#hBtn1").append(response.dataset.name)
-    $(".card-title2").append(" Commodity: " + (response.dataset.name))
+  
   
      
 
@@ -54,31 +61,20 @@ function getData(symbol){
 })
 }
 
-//function getIcon(symbol){
-   //var iconURL = "https://api.serpwow.com/live/search?api_key=5B001D6BC2A344FFB89CC51E65451763&q="+symbol+"+official+logo&search_type=images&images_size=icon"
-   // $.ajax({
-      //     url: iconURL,
-      //     method: "GET"
-       //  })
-           // We store all of the retrieved data inside of an object called "response"
-       //    .then(function (response2) {
-       //    console.log(response2)
-     //      $("img").attr("src", response2.image_results[0].image)
-     //  }
 
-//)
-//}
+
 $('#list').on('click', 'li', function(){
  
    console.log('hitt', $(this).text());
    var symbol = $(this).text();
+    $("#companyName").empty();
    $(".card-title1").empty()
    $(".card-text1").empty()
    $("#hBtn1").empty()
    $(".card-title2").empty()
    $(".card-text2").empty()
  
-      $("#list").empty()
+     
   
 
    console.log(symbol)

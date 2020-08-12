@@ -1,7 +1,6 @@
-
-
- //Declaring variables
-
+//Declaring variables
+ $("#stock-tile").show()
+ $("#stock-tile0").show()
  $("#stock-tile1").hide()
  $("#stock-tile2").hide()
  displayRecentSearchHistory() 
@@ -9,6 +8,9 @@
  $("#searchBtn").on("click",function(event){
     event.preventDefault();
       console.log("open")
+      $("#stock-tile").hide()
+      $("#stock-tile0").hide()
+      $("#companyName").empty()
     $(".card-title1").empty()
     $(".card-text1").empty()
     $("#hBtn1").empty()
@@ -35,17 +37,20 @@
           console.log(queryURL);
     console.log(response)
     $(".card-title1").append(" Symbol: " + (response.Symbol))
-    $(".card-text1").append("<li> Company Name: " + (response.Name)+"</li>")
+    $("#companyName").append("<li>" + (response.Name) + "</li>")
     $(".card-text1").append(" <li>Exchange: " + (response.Exchange)+"</li>")
     $(".card-text1").append("<li> Sector: " + (response.Sector)+"</li>")
     $(".card-text1").append("<li> Industry: " + (response.Industry)+"</li>")
     $(".card-text1").append("<li> DividendPerShare: " + (response.DividendPerShare)+"</li>")
+    $(".card-text1").append("<li> 52 Week High: " + (response['52WeekHigh'])+"</li>")
+    $(".card-text1").append("<li> 52 Week Low: " + (response['52WeekLow'])+"</li>")
+
     $(".card-text1").append("<li> AnalystTargetPrice: " + (response.AnalystTargetPrice)+"</li>")
     $("#hBtn1").append(response.Symbol)
     
     $(".card-title2").append(" Symbol Details: " + (response.Symbol))
-    $(".card-text2").append("<li> Company Description: " + (response.Description)+"</li>")
-    $(".card-text2").append(" <li>Currency: " + (response.Currency)+"</li>")
+    $(".card-text2").append("<li> Company Description: " + (response.Description)+"</li><br>")
+    $(".card-text2").append(" <li>Currency: " + (response.Currency)+"</li><br>")
     $(".card-text2").append("<li> Country: " + (response.Country)+"</li>")
 
 })
@@ -69,15 +74,17 @@ $('#list').on('click', 'li', function(){
   
     console.log('hitt', $(this).text());
     var symbol = $(this).text();
+    $("#companyName").empty()
     $(".card-title1").empty()
     $(".card-text1").empty()
     $("#hBtn1").empty()
     $(".card-title2").empty()
     $(".card-text2").empty()
-    $("#hBtn2").empty()
+    // $("#hBtn2").empty()
+    $("#stock-tile0").hide()
+    $("#stock-tile").hide()
     $("#stock-tile1").show()
     $("#stock-tile2").hide()
-    $("#list").empty()
    
 
     console.log(symbol)
@@ -89,13 +96,16 @@ $('#list').on('click', 'li', function(){
   $("#hBtn1").on('click',function(){
     console.log('gotit', $(this).text());
     var symbol = $(this).text();
-
+    
+    $("#stock-tile0").hide()
+    $("#stock-tile").hide()
+    $("#stock-tile1").hide()
+    $("#stock-tile2").show()
     $(".card-title1").empty()
     $(".card-text1").empty()
     $(".card-title2").empty()
     $(".card-text2").empty()
-    $("#stock-tile1").hide()
-    $("#stock-tile2").show()
+   
    
 
     console.log(symbol)
@@ -119,12 +129,12 @@ $("#list").empty()
     searchHistory.push(symbol);
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
     var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
-    for (var i = 0; i < searchHistory.length; i++) {
+    for (var i = 0; i < 15; i++) {
       console.log('searchHistory', searchHistory)
       var liEl = document.createElement('li')
       // console.log('searchHistory', (searchHistory[i]));
       liEl.textContent = (searchHistory[i]).toUpperCase();
-      ulEl.append(liEl)
+      ulEl.prepend(liEl)
     }
   }
 )}

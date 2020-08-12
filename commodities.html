@@ -11,93 +11,143 @@
 </head>
 
 <body>
-    <!------ animation property -------->
-<div class="w3-container w3-center w3-animate-opacity">
-    <!------ header and navbar -------->
+  <!------ animation property -------->
+  <div class="w3-container w3-center w3-animate-opacity">
+      <!------ header and navbar -------->
     <header class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">
-                <a href="https://commodity.com//">Commodities Trading</a>
-            </h1>
-            <p class="lead">A place to find things</p>
-        </div>        
+      <div class="container">
+        <h1 class="display-4">
+          <a href="https://commodity.com/" target="_blank">Commodities</a>
+          </h1>
+          <p class="lead">A place to find things</p>
+      </div>        
     </header>
     <nav class="navbar navbar-dark bg-dark">
-        <a href="commodities.html">Commodities</a>
-        <a href="crypto.html">Cryptocurrency</a>
-        <a href="index.html">Stocks</a>
-        <form class="form-inline">
-            <input id ="inputSymbol"class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button id="searchBtn"class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Commodities</a>
+      <a href="crypto.html">Cryptocurrency</a>
+      <a href="index.html">Stocks</a>
+      <form class="form-inline">
+        <input id ="inputSymbol"class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button id="searchBtn"class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </nav>
     <!------ main page content  ------>
+  <div class="pageContainer">
 
-    <div class="pageContainer">
-        
-        <div id ="stock-tile1"class="card text-center stock-tile">
-            <div class="card-header1">
-                <br>
-                <a href="https://blog.quandl.com/api-for-commodity-data">Find the commodities here</a>
-              <h2>Commodities</h2>
-                          </div>
-            <div class="card-body1">
-              <h5 class="card-title1"></h5>
-              <img src=""class="assetLogo"
-                width="90" height="90">
-              <p class="card-text1"></p>
-              <a href="#" id ="hBtn1" class="btn btn-primary"></a>
-            </div>
-            <div class="card-footer text-muted">
-              
-            </div>
-          </div>
-        
-            <div class="card-footer text-muted">
-              
-            </div>
+      <!------ News ------>
+    <div class="row">
+      <div class="col-3 newsContainer">
+        <section id="news">
+          <h5 class="business">Top Business News</h5>
+        </section>
+      </div>
+        <div id="symbolInfo">
         </div>
-        <div id ="stock-tile2"class="card text-center stock-tile">
-          <div class="card-header2">
-            <h2>Commodities: details</h2>
-          </div>
-          <div class="card-body2">
-            <h5 class="card-title2"></h5>
-            <p class="card-text2"></p>
-            <a href="#" id ="hBtn2" class="btn btn-primary">'Go Back'</a>
-          </div>
-          <div class="card-footer text-muted">
-            
-          </div>
-        </div>
-      <aside class="most-popular">
-          <h5>Recent Searches</h5>
-
-          <ul id ="list"class="stockList">
-              <hr class="my-4">
-           
-                  </ul>
-                <hr class="my-4">
-                     
+        <!--Default Card-->
+        <div class="col-7 sticky-top">
          
-      </aside>
-  </div>
+          <div id ="stock-tile" class="card text-center stock-tile">
+            <div class="card-header">
+              <h2> Commodities Trading</h2>
 
-  <div id="news">
-    <h5 class="business">Top Business News</h5>
-  </div>
-</div>
+             
+                <a href="https://blog.quandl.com/api-for-commodity-data" target="_blank">Find the commodities here</a>
+            </div>
 
-      <div id="symbolInfo"></div>
+            <div class="card-body">
+              <h3> Knowing Commodity Trading</h3>
+              <p>A commodity is a raw material. It is used as an input for the production of other things.
+                Commodities that are traded are typically sorted into four categories broad categories: metal, energy, livestock and meat, and agricultural.
+                For investors, commodities can be an important way to diversify their portfolio beyond traditional securities.
+                In the most basic sense, commodities are known to be risky investment propositions because their market (supply and demand) is impacted by uncertainties that are difficult or impossible to predict, such as unusual weather patterns, epidemics, and disasters both natural and man-made.
+                There are a number of ways to invest in commodities, such as futures contracts, options, and exchange-traded funds (ETFs). </p>
+              
+              <img src= "img/images3.png"class="assetLogo"
+                width="auto" height="auto">
+                <h5> To Begin with</h5>
+                <a href="https://www.decarleytrading.com/learn-to-trade-commodities/getting-started-in-commodity-trading/60-choosing-a-brokerage-firm" target="_blank">Step 1: Choosing Commodity Broker</a> 
+                <br>
+                <a href="https://www.thebalance.com/how-to-open-a-commodities-trading-account-809156" target="_blank">Step 2: Commodities account Opening</a>
+                <br>
+                <a href="https://carleygarnertrading.com/learn-to-trade-commodities/commodity-trading-101/beginning-commodity-trading-education/63-the-commodity-trading-game-plan?showall=1&limitstart=" target="_blank">Step 3:Develop a Trading Plan</a>
+                <br>
+                <a href ="https://www.rjobrien.com/resources/forms-documents-center/" target="_blank">Step 4: Trdaing Futures </a>
+                <br>
+                <a href ="https://www.rjobrien.com/resources/forms-documents-center/" target="_blank">Step 5: Diversify your investment </a>
+                <br>
+                <a href ="https://www.amazon.com/Commodities-Trading-Beginners-Commodity-Profits/dp/1517599105" target="_blank">Read More </a>
+                
+              
+            </div>
 
-  </div>
+            <div class="card-footer text-muted">                  
+            </div>
+          </div>
+          
+          <div id ="stock-tile0" class="card text-center stock-tile">
+            <div class="card-header">
+              <h2> Next Step: To Invest</h2>
+            </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <div class="card-body">
+              <h3> Main Trading Platforms for Commodities</h3>
+              <p> Need to do well research the available Platforms. It is important to consider the commission and fees charged by the different platforms.
+                It is also important to consider the services provided as well as the Tools. Now that you've learned the basics of commodity trading,
+                 you can get into the specific ways you can make money. </p>
+              
+              <img src= "img/images4.png"class="assetLogo"
+                width="auto" height="auto">
+                <h5> Consider Below top 3 Trading Platforms for Online Commodity Trading</h5>
+                
+                <br>
+                <a href="https://us.etrade.com/trade?mp_id=276093321&ch_id=D&cd_id=134109619" target="_blank">E*trade</a>
+                <br>
+                <a href ="https://ninjatrader.com/LP/WhyPaySoftware/WhyPayForSoftware?utm_source=Benzinga&utm_medium=cpc&utm_content=bestbroker" target="_blank">Ninja Trader</a>
+                <br>
+                <a href ="https://www.merrilledge.com/" target="_blank">Merill Edge</a>
+                <br>
+              
+            </div>
+
+            <div class="card-footer text-muted">                  
+            </div>
+          </div>
+      <!------ Stock Card ------>
+      
+        <div id ="stock-tile1" class="card text-center stock-tile">
+          <div class="card-header">
+            <h2 id="companyName"></h2>
+          </div>
+          <div class="card-body1">
+            <h5 class="card-title1"></h5>
+            <img src="img/images5.png"class="assetLogo"
+              width="auto" height="auto">
+            <p class="card-text1"></p>
+            <a href="#" id ="hBtn1" class="btn btn-primary"></a>
+          </div>
+          <div class="card-footer text-muted">                  
+          </div>
+        </div>
+
+        </div>
+      <!------ Recent Searches ------>
+      <div class="col-2 searchCol">
+        <aside class="most-popular">
+          <h5>Recent Searches</h5>
+          <ul id ="list"class="stockList">
+            <hr class="my-4">
+          </ul>
+              <hr class="my-4">
+        </aside>
+      </div>
+    </div>
+  </div>  
+
+
     <script type="text/javascript"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src= "quandl.js"></script>
-
-  
-    
+    <!-- <script src= "tradier.js"></script> -->
+    <script src="news.js"s></script>
 </body>
 </html>
