@@ -80,7 +80,7 @@ $('#list').on('click', 'li', function(){
     $("#hBtn1").empty()
     $(".card-title2").empty()
     $(".card-text2").empty()
-    $("#hBtn2").empty()
+    // $("#hBtn2").empty()
     $("#stock-tile0").hide()
     $("#stock-tile").hide()
     $("#stock-tile1").show()
@@ -134,7 +134,7 @@ $("#list").empty()
       var liEl = document.createElement('li')
       // console.log('searchHistory', (searchHistory[i]));
       liEl.textContent = (searchHistory[i]).toUpperCase();
-      ulEl.append(liEl)
+      ulEl.prepend(liEl)
     }
   }
 )}
