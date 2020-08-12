@@ -46,3 +46,14 @@ li{
 .newsContainer{
     padding: 0 auto;
 }
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    border-radius: 6px;
+    outline: none;
+  }
