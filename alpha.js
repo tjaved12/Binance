@@ -3,9 +3,24 @@
  $("#stock-tile0").show()
  $("#stock-tile1").hide()
  $("#stock-tile2").hide()
+ $("#hBtn2").hide()
  displayRecentSearchHistory() 
+ recent()
+ function recent(){
+  var ulEl = document.getElementById('list');
+  var searchHistoryStocks = JSON.parse(localStorage.getItem('searchHistoryStocks')) || [];
+
+  for (var i = 0; i < searchHistoryStocks.length; i++) {
+   console.log('searchHistory', searchHistoryStocks)
+   var liEl = document.createElement('li')
+   // console.log('searchHistory', (searchHistory[i]));
+   liEl.textContent = (searchHistoryStocks[i]).toUpperCase();
+   ulEl.prepend(liEl)
+ }
+ }
  
  $("#searchBtn").on("click",function(event){
+
     event.preventDefault();
       console.log("open")
       $("#stock-tile").hide()
@@ -19,6 +34,8 @@
     $("#hBtn2").empty()
     $("#stock-tile1").show()
     $("#stock-tile2").hide()
+    $("#hBtn2").hide()
+
     
     var symbol=  $("#inputSymbol").val()
     getData(symbol)
@@ -85,7 +102,8 @@ $('#list').on('click', 'li', function(){
     $("#stock-tile").hide()
     $("#stock-tile1").show()
     $("#stock-tile2").hide()
-   
+    $("#hBtn2").hide()
+
 
     console.log(symbol)
     getData(symbol)
@@ -105,7 +123,9 @@ $('#list').on('click', 'li', function(){
     $(".card-text1").empty()
     $(".card-title2").empty()
     $(".card-text2").empty()
-   
+    $("#hBtn2").show()
+    $("#hBtn2").html(symbol.toUpperCase()+" Live Chart")
+
    
 
     console.log(symbol)
@@ -138,3 +158,23 @@ $("#list").empty()
     }
   }
     )}
+    // function getChart(symbol){
+    //     var queryURL = "https://www.tradingview.com/chart/"+symbol
+    //     $.ajax({
+    //       url: queryURL,
+    //       method: "GET"
+    //     })
+    //       // We store all of the retrieved data inside of an object called "response"
+    //       .then(function (response) {
+    //         // Log the queryURL
+    //         console.log(queryURL);
+    //   console.log(response)
+    //   }
+    //   )}
+    //   getChart()
+
+    $("#hBtn2").on("click", function(){
+      var symbol=  $("#inputSymbol").val()
+      console.log(symbol)
+$("#hBtn2").attr("href", "https://www.tradingview.com/chart/" +symbol)
+    })
