@@ -114,27 +114,27 @@ $('#list').on('click', 'li', function(){
   })
   function displayRecentSearchHistory() {
     $("#searchBtn").on("click",function(event){
-        event.preventDefault();
+      event.preventDefault();
     var symbol= $("#inputSymbol").val()
     console.log(symbol)
     //saving the symbol na
     //Using parse to change the string into parse
     
-    var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    var searchHistoryStocks = JSON.parse(localStorage.getItem('searchHistoryStocks')) || [];
     // console.log('searchHistory', searchHistory)
     //Declaring variables
     //for loop to add scores in array
     var ulEl = document.getElementById('list');
 $("#list").empty()
-    searchHistory.push(symbol);
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-    var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
-    for (var i = 0; i < 15; i++) {
-      console.log('searchHistory', searchHistory)
+    searchHistoryStocks.push(symbol);
+    localStorage.setItem("searchHistoryStocks", JSON.stringify(searchHistoryStocks));
+    var searchHistoryStocks = JSON.parse(localStorage.getItem('searchHistoryStocks')) || [];
+    for (var i = 0; i < searchHistoryStocks.length; i++) {
+      console.log('searchHistory', searchHistoryStocks)
       var liEl = document.createElement('li')
       // console.log('searchHistory', (searchHistory[i]));
-      liEl.textContent = (searchHistory[i]).toUpperCase();
+      liEl.textContent = (searchHistoryStocks[i]).toUpperCase();
       ulEl.prepend(liEl)
     }
   }
-)}
+    )}
