@@ -43,7 +43,7 @@
   </body>
   <script>
       
-      setInterval(orderBook,1000);
+      setInterval(orderBook,100);
       
       function orderBook(){
           var ourRequest = new XMLHttpRequest();
@@ -73,7 +73,7 @@
                 marker: {
                     color: 'rgb(160, 9, 9)',
                 },
-                orientation: 'h'
+                orientation: 'w'
               }];
               
               var layout1 = {
@@ -91,7 +91,7 @@
                 marker: {
                     color: 'rgb(3, 119, 73)'
                 },
-                orientation: 'h'
+                orientation: 'w'
               }];
   
               
