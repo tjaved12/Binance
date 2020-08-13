@@ -29,9 +29,9 @@ I want to learn about different trading options, platforms and get current busin
 
 ## Development Strategy
 
-* Use the [alphaadvantage API](https://www.alphavantage.co/api) to retrieve Stocks Data. 
- Use the [stocknews API]https://stocknewsapi.com/api) to retrieve top 5 business news 
- Use the [quandl API](https://www.quandl.com/api) to retrieve Commodities Data. 
+* Use the [alphaadvantage API] (https://www.alphavantage.co/api) to retrieve Stocks Data. 
+ Use the [stocknews API] (https://stocknewsapi.com/api) to retrieve top 5 business news 
+ Use the [quandl API] (https://www.quandl.com/api) to retrieve Commodities Data. 
  Use the [Binance API] (https://api.binance.com/api/) to retrieve Stocks Data. 
 
 * Use AJAX to hook into the API to retrieve data in JSON format.
@@ -81,7 +81,7 @@ I want to learn about different trading options, platforms and get current busin
 
 ## Getting Started
 
-Go to  https://tjaved12.github.io/github.binance
+Go to  https://tjaved12.github.io/Binance/
 
 
 ## Tech Stack
