@@ -64,6 +64,10 @@ li{
     border: black 1px;
   }
 
+  .card-margin{
+      margin: 10px;
+  }
+
   @media (max-width: 575.98px) {
       .searchCol{
           display: none;
