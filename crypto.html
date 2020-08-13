@@ -1,52 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <link rel="stylesheet" href="./css/style.css">
-  
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
      <!------ animation property -------->
-<div class="w3-container w3-center w3-animate-opacity">
-    <!------ header and navbar -------->
-    <header class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">
-                <a href="https://www.binance.com/en" target="_blank">Binance</a>
-            </h1>
-            <p class="lead">A place to find things</p>
-        </div>        
-    </header>
-    <nav class="navbar navbar-dark bg-dark">
-        <a href="commodities.html">Commodities</a>
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Cryptocurrency</a>
-        <a href="index.html">Stocks</a>
-        <form class="form-inline">
-            <input id ="symbol"class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button id="searchBtn"class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </nav>
-    <!------ main page content  ------>
-         
-          <div class="row">
-              <div class="col-sm-12" id="chartContainer1" style="height: 400px;width: 100%"></div>
-          </div>
-          <div class="row">
-              <div class="col-sm-12" id="chartContainer2" style="height: 400px;width: 100%"></div>
-          </div>
-      </div>
-  </body>
-  <script>
+    <div class="w3-container w3-center w3-animate-opacity">
+        <!------ header -------->
+        <header class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">
+                    <a href="https://www.binance.com/en" target="_blank">Binance</a>
+                </h1>
+                <p class="lead">A place to find things</p>
+            </div>        
+        </header>
+        <!------ navbar ------>
+        <nav class="navbar navbar-dark bg-dark">
+            <a href="commodities.html">Commodities</a>
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Cryptocurrency</a>
+            <a href="index.html">Stocks</a>
+            <form class="form-inline">
+                <input id ="symbol"class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button id="searchBtn"class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+        <!------ main page content  ------>
+        <div class="pageContainer">
+            <div class="row no-gutters">
+                <!------ News ------>
+                <div class="col-sm-3 newsContainer">
+                    <section id="news">
+                        <h5 class="business">Top Business News</h5>
+                    </section>
+                </div>
+                <div id="symbolInfo">
+                </div>
+                <!------ charts ------>
+                <div class="col-sm-7">
+                    <div id="chartContainer1" style="height: 400px;width: 100%"></div>
+                    <div id="chartContainer2" style="height: 400px;width: 100%"></div>
+                </div>
+                <!------ Recent Searches ------>
+                <div class="col-sm-2 searchCol">
+                    <aside class="most-popular">
+                        <h5>Recent Searches</h5>
+                        <ul id ="list"class="stockList">            
+                        </ul>
+                        <hr class="my-4">
+                    </aside>
+                </div>
+            </div>
+        </div>  
+    </div>
+</body>
+<script src="news.js"></script>
+<script>
       
-      setInterval(orderBook,100);
+    setInterval(orderBook,100);
       
-      function orderBook(){
-          var ourRequest = new XMLHttpRequest();
+    function orderBook(){
+        var ourRequest = new XMLHttpRequest();
           ourRequest.open('GET','https://api.binance.com/api/v1/depth?symbol=' + document.getElementById("symbol").value + '&limit=5',true);
           ourRequest.onload = function(){
               ourData = JSON.parse(ourRequest.responseText);
@@ -107,4 +129,5 @@
       }
       
   </script>
+  
 </html>
