@@ -58,9 +58,10 @@ li{
   }
 
   .assetLogo{
-    width: 100%;
+    width: 25%;
     max-width: 400px;
     height: auto;
+    border: black 1px;
   }
 
   @media (max-width: 575.98px) {
