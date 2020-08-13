@@ -158,21 +158,7 @@ $("#list").empty()
     }
   }
     )}
-    // function getChart(symbol){
-    //     var queryURL = "https://www.tradingview.com/chart/"+symbol
-    //     $.ajax({
-    //       url: queryURL,
-    //       method: "GET"
-    //     })
-    //       // We store all of the retrieved data inside of an object called "response"
-    //       .then(function (response) {
-    //         // Log the queryURL
-    //         console.log(queryURL);
-    //   console.log(response)
-    //   }
-    //   )}
-    //   getChart()
-
+ 
     $("#hBtn2").on("click", function(){
       var symbol=  $("#inputSymbol").val()
       console.log(symbol)

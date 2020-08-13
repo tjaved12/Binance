@@ -64,7 +64,20 @@
 </body>
 <script src="news.js"></script>
 <script>
-      
+      displayRecentSearchHistory()
+      recent()
+ function recent(){
+  var ulEl = document.getElementById('list');
+  var searchHistoryC = JSON.parse(localStorage.getItem('searchHistoryC')) || [];
+
+  for (var i = 0; i < searchHistoryC.length; i++) {
+   console.log('searchHistory', searchHistoryC)
+   var liEl = document.createElement('li')
+   // console.log('searchHistory', (searchHistory[i]));
+   liEl.textContent = (searchHistoryC[i]).toUpperCase();
+   ulEl.prepend(liEl)
+ }
+ } 
     setInterval(orderBook,100);
       
     function orderBook(){
@@ -127,7 +140,31 @@
           ourRequest.send();
           
       }
-      
+      function displayRecentSearchHistory() {
+   $("#searchBtn").on("click",function(event){
+       event.preventDefault();
+   var symbol= $("#inputSymbol").val()
+   console.log(symbol)
+   //saving the symbol na
+   //Using parse to change the string into parse
+   
+   var searchHistoryC = JSON.parse(localStorage.getItem('searchHistoryC')) || [];
+   // console.log('searchHistory', searchHistory)
+   //Declaring variables
+   //for loop to add scores in array
+   var ulEl = document.getElementById('list');
+$("#list").empty()
+   searchHistoryC.push(symbol);
+   localStorage.setItem("searchHistoryC", JSON.stringify(searchHistoryC));
+   var searchHistoryC = JSON.parse(localStorage.getItem('searchHistoryC')) || [];
+   for (var i = 0; i < searchHistoryC.length; i++) {
+     console.log('searchHistory', searchHistoryC)
+     var liEl = document.createElement('li')
+         liEl.textContent = (searchHistoryC[i]).toUpperCase();
+     ulEl.prepend(liEl)
+   }
+ }
+)}
   </script>
   
 </html>

@@ -5,7 +5,19 @@ $("#stock-tile0").show()
 $("#stock-tile1").hide()
 $("#stock-tile2").hide()
 displayRecentSearchHistory() 
+recent()
+ function recent(){
+  var ulEl = document.getElementById('list');
+  var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
+  for (var i = 0; i < searchHistory.length; i++) {
+   console.log('searchHistory', searchHistory)
+   var liEl = document.createElement('li')
+ 
+   liEl.textContent = (searchHistory[i]).toUpperCase();
+   ulEl.prepend(liEl)
+ }
+ }
 
 
 
@@ -106,7 +118,7 @@ $("#list").empty()
      var liEl = document.createElement('li')
      // console.log('searchHistory', (searchHistory[i]));
      liEl.textContent = (searchHistory[i]).toUpperCase();
-     ulEl.append(liEl)
+     ulEl.prepend(liEl)
    }
  }
 )}
