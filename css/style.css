@@ -10,6 +10,7 @@
 .navbar{
     justify-content: space-around;
     margin:0 auto;
+    z-index: 5;
 }
 
 a{
@@ -67,6 +68,20 @@ li{
   .card-margin{
       margin: 10px;
   }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.content{
+    z-index: 1;
+}
+
+.sticky + .content {
+  padding-top: 62px;
+}
 
   @media (max-width: 575.98px) {
       .searchCol{
