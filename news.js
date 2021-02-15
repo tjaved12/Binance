@@ -1,3 +1,5 @@
+// api key e5d8f0f34fc44dc7a9c14e8e91146693
+
 function displayNews(){
 
     var queryURL=' https://stocknewsapi.com/api/v1/category?section=general&items=50&token=4axewg16fegbjlsotq2ezkjzl1utnz8yf1vgblg6'+ '&apikey4axewg16fegbjlsotq2ezkjzl1utnz8yf1vgblg6';
